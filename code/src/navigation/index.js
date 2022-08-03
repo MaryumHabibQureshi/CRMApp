@@ -3,7 +3,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import WelcomeScreen from "./screens/Welcome";
 import MainPage from "./screens/MainPage";
-import AddCustomer from "./screens/customers/Create";
+import AddCustomer from "./screens/customers/New";
 import EditCustomer from "./screens/customers/Edit";
 import CustomersList from "./screens/customers/List";
 

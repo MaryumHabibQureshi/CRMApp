@@ -2,6 +2,7 @@ import { useNavigation } from "@react-navigation/native";
 import { StyleSheet, SafeAreaView, ScrollView, View } from "react-native";
 import Button from "../../../components/Button";
 import Title from "../../../components/Title";
+import Regions from "../../../features/customer/RegionList";
 import MainPageStyles from "./styles";
 
 export default function MainPage() {
@@ -20,11 +21,7 @@ export default function MainPage() {
             disabled={false}
           />
 
-          <Button
-            onPress={() => navigate("Customers")}
-            text="View Customers"
-            disabled={false}
-          />
+          <Regions />
         </View>
       </ScrollView>
     </SafeAreaView>
