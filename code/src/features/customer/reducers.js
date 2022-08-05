@@ -61,6 +61,7 @@ const reducers = {
   },
   editCustomer: (state, { payload }) => {
     state.edit.status = REQUESTING;
+    state.edit = payload;
   },
   setForm: (state, { payload }) => {
     const customer = state.list.customers.find((a) => a.id === payload);
@@ -104,6 +105,10 @@ const reducers = {
   },
   loadCustomers: (state) => {
     state.list.status = REQUESTING;
+  },
+  clearCustomers: (state, { payload }) => {
+    console.log("Clear Customer Called");
+    // loadCustomers
   },
 };
 

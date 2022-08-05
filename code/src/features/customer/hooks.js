@@ -74,18 +74,14 @@ export const useListCustomers = (regionID) => {
     dispatch(actions.loadCustomers());
   }, [dispatch]);
   const customers = useSelector((state) => state.customer.list.customers);
-  console.log(customers);
-  if (customers === []) {
-    return customers;
-  } else {
-    const regions = useSelector((state) => state.customer.regions.list);
-    const region = regions.find((r) => r.id === regionID);
-    console.log("customers", customers);
-    console.log(regions);
-    const filtered = customers.filter((c) => c.region === region.name);
-    return filtered;
-  }
+  console.log("customers currently in hook line 77", customers);
+
+  const regions = useSelector((state) => state.customer.regions.list);
+  const region = regions.find((r) => r.id === regionID);
+  const filtered = customers.filter((c) => c.region === region.name);
+  return filtered;
 };
 export const useListRegions = () => {
-  return useSelector((state) => state.customer.regions.list);
+  const regions = useSelector((state) => state.customer.regions.list);
+  return regions;
 };

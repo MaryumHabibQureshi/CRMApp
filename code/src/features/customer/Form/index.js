@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
-import { View, TextInput, Switch } from "react-native";
+import { View, TextInput, Switch, Text } from "react-native";
 import { useUpdateFields, useListRegions } from "../hooks";
 import { PENDING, INPROGRESS } from "../../../utilities/helpers";
 import Button from "../../../components/Button";
@@ -24,40 +24,48 @@ const Form = ({ handleSubmit, status, customerID }) => {
   return (
     <View style={styles.container}>
       <View style={styles.form}>
-        <TextInput
-          key={"first_name"}
-          placeholder={first_name || "First Name"}
-          value={first_name || ""}
-          style={{
-            borderWidth: 1,
-            borderColor: "black",
-            borderRadius: 4,
-            padding: 15,
-          }}
-          onChangeText={(v) => setFormField("first_name", v)}
-        />
+        <View>
+          <Text style={styles.title}>Last Name</Text>
+          <TextInput
+            key={"first_name"}
+            placeholder={first_name || "First Name"}
+            value={first_name || ""}
+            style={{
+              borderWidth: 1,
+              borderColor: "black",
+              borderRadius: 4,
+              padding: 15,
+            }}
+            onChangeText={(v) => setFormField("first_name", v)}
+          />
+        </View>
 
-        <View style={{ height: 15, width: "100%" }}></View>
-
-        <TextInput
-          key={"last_name"}
-          placeholder={last_name || "Last Name"}
-          value={last_name || ""}
-          style={{
-            borderWidth: 1,
-            borderColor: "black",
-            borderRadius: 4,
-            padding: 15,
-          }}
-          onChangeText={(v) => setFormField("last_name", v)}
-        />
         <View style={{ height: 15, width: "100%" }}></View>
 
         <View>
+          <Text style={styles.title}>Last Name</Text>
+          <TextInput
+            key={"last_name"}
+            placeholder={last_name || "Last Name"}
+            value={last_name || ""}
+            style={{
+              borderWidth: 1,
+              borderColor: "black",
+              borderRadius: 4,
+              padding: 15,
+            }}
+            onChangeText={(v) => setFormField("last_name", v)}
+          />
+        </View>
+        <View style={{ height: 15, width: "100%" }}></View>
+
+        <View>
+          <Text style={styles.title}>Active?</Text>
           <Switch
             trackColor={{ false: "#767577", true: "#81b0ff" }}
             thumbColor={active ? "#f5dd4b" : "#f4f3f4"}
             ios_backgroundColor="#3e3e3e"
+            style={styles.switchToggle}
             onValueChange={toggleSwitch}
             value={active}
           />

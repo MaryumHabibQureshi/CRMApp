@@ -8,7 +8,7 @@ const styles = () => {
       paddingVertical: "10%",
     },
     form: {
-      height: "100vh",
+      height: "100%",
       width: "100%",
     },
     dropdownsRow: {
@@ -32,6 +32,17 @@ const styles = () => {
       borderBottomColor: "#C5C5C5",
     },
     dropdown1RowTxtStyle: { color: "#444", textAlign: "left" },
+    switchToggle: {
+      marginBottom: 10,
+      width: 90,
+      marginRight: 6,
+      marginLeft: 6,
+    },
+    title: {
+      fontSize: 12,
+      fontWeight: "bold",
+      textAlign: "left",
+    },
   };
 };
 

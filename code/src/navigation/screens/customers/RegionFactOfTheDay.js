@@ -1,13 +1,7 @@
 import React from "react";
 import { ScrollView, SafeAreaView, Text } from "react-native";
-import RegionFactOfTheDay from "../../../features/customer/RegionFactOfTheDay";
+import RegionOfTheDay from "../../../features/customer/RegionFactOfTheDay";
 
-const RegionFactOfTheDay = () => (
-  <SafeAreaView>
-    <ScrollView>
-      <RegionFactOfTheDay />
-    </ScrollView>
-  </SafeAreaView>
-);
+const RegionFactOfTheDay = () => <RegionOfTheDay />;
 
 export default RegionFactOfTheDay;

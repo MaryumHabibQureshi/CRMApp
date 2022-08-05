@@ -8,7 +8,20 @@ export function* watchLoadCustomers() {
 
 export function* takeLoadCustomers() {
   try {
-    const customers = yield get("CUSTOMERS_KEY");
+    var customers = yield get("CUSTOMERS_KEY");
+    console.log("loading customers - saga", customers);
+    if (customers == null) {
+      customers = [
+        {
+          id: 1,
+          first_name: "M",
+          last_name: "H",
+          active: true,
+          region: "South West",
+        },
+      ];
+    }
+    console.log("loading customers after adding default - saga", customers);
     yield put(actions.loadResult(customers));
   } catch (error) {
     yield put(actions.loadResult([]));
